@@ -1,0 +1,19 @@
+<!-- Listado de tweets -->
+<!DOCTYPE html>
+<html>
+    <head> <title> Tweets </title> </head>
+    <body>
+        <table>
+            <tr>
+                <th> Estado </th>
+                <th> Monstruo </th>
+            </tr>
+            <% @tweets.each do |tweet| %>
+            <tr>
+                <td> <%= tweet.estado %> </td>
+                <td> <%= tweet.monstruo.nombre %> </td>
+            </tr>
+            <% end %>
+        </table>
+    </body>
+</html>

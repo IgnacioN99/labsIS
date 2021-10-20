@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        ASD
+    </title>
+    <body>
+        <h1>
+            <%=@monstruo.nombre%><%=image_tag "logo.png"%>
+       </h1>
+       <p>
+           <%=@monstruo.descripcion%>
+       </p>
+       <%@tweets.each do |tweet|%>
+       <li>
+           <ul>
+                <%=tweet.estado%>
+           </ul>
+       </li>
+       <%end%>
+    </body>
+</html>
