@@ -1,0 +1,30 @@
+<!------------------------------------------------------ 
+Acá va a ir el listado de monstruos usando los tags  
+<ul> y <li>.
+Debe tener un título y mostrar el nombre (en negrita) y
+la descripción.
+------------------------------------------------------>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <%= stylesheet_link_tag 'application', media: 'all'%>
+    </head>
+    <title>
+        ASD
+    </title>
+    <body>
+
+            <%Monstruo.all.each do |monstruo|%>
+            <ul>
+                <li>
+                    <%=link_to(monstruo.nombre,monstruo)%> 
+                    <%if (monstruo.tweets.count>1)%>
+                    <b class="tw">Twittero destacado</b>
+                    <%end%>
+                    : <b><%=monstruo.descripcion%></b> <%=link_to("Borrar",monstruo,method: :delete,class:"btn btn-danger")%>
+                </li>
+            </ul>
+            <%end%>
+    </body>
+</html>

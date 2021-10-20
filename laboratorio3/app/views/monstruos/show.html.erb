@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        ASD
+    </title>
+    <body>
+        <%monstruo=Monstruo.find(params[:id])%>
+        <h1>
+            <%=monstruo.nombre%><%=image_tag "logo.png"%>
+       </h1>
+       <p>
+           <%=monstruo.descripcion%>
+       </p>
+    </body>
+</html>

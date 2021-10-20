@@ -1,0 +1,104 @@
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-10 15:31:48.564024"], ["updated_at", "2021-09-10 15:31:48.564024"]]
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMonstruos (20140825173205)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "monstruos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "descripcion" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140825173205"]]
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTweets (20140825180010)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "tweets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "estado" varchar, "monstruo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140825180010"]]
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMonstruo Load (0.4ms)[0m  [1m[34mSELECT "monstruos".* FROM "monstruos"[0m
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMonstruo Create (0.9ms)[0m  [1m[32mINSERT INTO "monstruos" ("nombre", "descripcion", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nombre", "Dracula"], ["descripcion", "Chupa sange"], ["created_at", "2021-09-10 17:18:46.943009"], ["updated_at", "2021-09-10 17:18:46.943009"]]
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMonstruo Create (0.9ms)[0m  [1m[32mINSERT INTO "monstruos" ("nombre", "descripcion", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nombre", "King Kong"], ["descripcion", "Es un gorila gigante"], ["created_at", "2021-09-10 17:18:46.969294"], ["updated_at", "2021-09-10 17:18:46.969294"]]
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMonstruo Create (4.9ms)[0m  [1m[32mINSERT INTO "monstruos" ("nombre", "descripcion", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nombre", "Nahuelito"], ["descripcion", "Vive en el Nahuel Huapi"], ["created_at", "2021-09-10 17:18:46.992296"], ["updated_at", "2021-09-10 17:18:46.992296"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMonstruo Create (0.9ms)[0m  [1m[32mINSERT INTO "monstruos" ("nombre", "descripcion", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nombre", "Hombre lobo"], ["descripcion", "Mitad lobo - mitad humano"], ["created_at", "2021-09-10 17:18:47.019221"], ["updated_at", "2021-09-10 17:18:47.019221"]]
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (0.9ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Soy fanático de Walking Dead"], ["monstruo", "Dracula"], ["created_at", "2021-09-10 17:18:47.057834"], ["updated_at", "2021-09-10 17:18:47.057834"]]
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (0.8ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Se nadar espalda y mariposa desde que nací "], ["monstruo", "Dracula"], ["created_at", "2021-09-10 17:18:47.082137"], ["updated_at", "2021-09-10 17:18:47.082137"]]
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (0.9ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "La mona lisa es la mona más fea"], ["monstruo", "King Kong"], ["created_at", "2021-09-10 17:18:47.105594"], ["updated_at", "2021-09-10 17:18:47.105594"]]
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (0.8ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Soy un tipo con la sangre fría"], ["monstruo", "Dracula"], ["created_at", "2021-09-10 17:18:47.128838"], ["updated_at", "2021-09-10 17:18:47.128838"]]
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (0.8ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Me gusta el asado jugoso"], ["monstruo", "Dracula"], ["created_at", "2021-09-10 17:18:47.157238"], ["updated_at", "2021-09-10 17:18:47.157238"]]
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (1.2ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Fanático del Planeta de los Simios"], ["monstruo", "King Kong"], ["created_at", "2021-09-10 17:18:47.183531"], ["updated_at", "2021-09-10 17:18:47.183531"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (0.8ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Destapo las latas con los dientes"], ["monstruo", "Dracula"], ["created_at", "2021-09-10 17:18:47.214560"], ["updated_at", "2021-09-10 17:18:47.214560"]]
+  [1m[36mTRANSACTION (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (1.0ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "El ajo en la ensalada me cae mal"], ["monstruo", "Dracula"], ["created_at", "2021-09-10 17:18:47.246342"], ["updated_at", "2021-09-10 17:18:47.246342"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mTweet Load (1.2ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mTweet Load (1.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (1.0ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Tengo sueño"], ["monstruo", "oso"], ["created_at", "2021-09-10 17:27:59.847594"], ["updated_at", "2021-09-10 17:27:59.847594"]]
+  [1m[36mTRANSACTION (16.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTweet Load (1.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (2.6ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Tengo hambre"], ["monstruo", "Hombre lobo"], ["created_at", "2021-09-10 17:34:56.879921"], ["updated_at", "2021-09-10 17:34:56.879921"]]
+  [1m[36mTRANSACTION (19.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Create (3.3ms)[0m  [1m[32mINSERT INTO "tweets" ("estado", "monstruo", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["estado", "Holaa"], ["monstruo", "Goku"], ["created_at", "2021-09-10 17:36:23.253440"], ["updated_at", "2021-09-10 17:36:23.253440"]]
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTweet Load (1.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mTweet Load (0.5ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTweet Load (1.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTweet Load (0.7ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" ORDER BY "tweets"."monstruo" ASC[0m
+  [1m[36mTweet Load (0.8ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Update (0.9ms)[0m  [1m[33mUPDATE "tweets" SET "monstruo" = ?, "updated_at" = ? WHERE "tweets"."id" = ?[0m  [["monstruo", "Messi"], ["updated_at", "2021-09-10 17:39:22.278942"], ["id", 3]]
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTweet Load (1.9ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTweet Destroy (2.0ms)[0m  [1m[31mDELETE FROM "tweets" WHERE "tweets"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (16.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTweet Load (1.4ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets" WHERE "tweets"."monstruo" = ? ORDER BY "tweets"."id" ASC LIMIT ?[0m  [["monstruo", "Dracula"], ["LIMIT", 5]]
